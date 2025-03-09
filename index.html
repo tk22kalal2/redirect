@@ -18,11 +18,12 @@
             const iframe = document.getElementById('embeddedFrame');
             setInterval(() => {
                 try {
-                    if (iframe.contentWindow.location.href !== "https://afrahtafreeh.site/Plugs/token_display.html") {
-                        window.location.href = "https://afrahtafreeh.site/Plugs/token_display.html";
+                    const iframeURL = iframe.contentWindow.location.href;
+                    if (iframeURL.startsWith("https://afrahtafreeh.site/")) {
+                        window.location.href = iframeURL;
                     }
                 } catch (e) {
-                    window.location.href = "https://afrahtafreeh.site";
+                    console.error("Cross-origin error or security block.");
                 }
             }, 1000);
         }
