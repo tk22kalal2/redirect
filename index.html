@@ -13,12 +13,24 @@
             border: none;
         }
     </style>
+    <script>
+        function enforceURL() {
+            const iframe = document.getElementById('embeddedFrame');
+            setInterval(() => {
+                try {
+                    if (iframe.contentWindow.location.href !== "https://afrahtafreeh.site/Plugs/token_display.html") {
+                        window.location.href = "https://afrahtafreeh.site";
+                    }
+                } catch (e) {
+                    window.location.href = "https://afrahtafreeh.site";
+                }
+            }, 1000);
+        }
+    </script>
 </head>
-<body>
+<body onload="enforceURL()">
     <div class="iframe-container">
-        <iframe src="https://afrahtafreeh.site/Plug/token_display.html" 
-                allowfullscreen>
-        </iframe>
+        <iframe id="embeddedFrame" src="https://afrahtafreeh.site/Plugs/token_display.html" allowfullscreen></iframe>
     </div>
 </body>
 </html>
